@@ -48,3 +48,6 @@ class ArrayList:
   
   def clear(self) -> None:
     self.data = []
+  
+  def extend(self, elements) -> None:
+    self.data.extend(elements.data)
