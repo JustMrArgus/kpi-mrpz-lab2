@@ -154,3 +154,15 @@ class DoublyLinkedList:
       index += 1
     
     return -1
+
+  def findLast(self, element: str) -> int:
+    current = self.tail
+    index = self._size - 1
+    
+    while current:
+      if current.data == element:
+        return index
+      current = current.prev
+      index -= 1
+    
+    return -1
