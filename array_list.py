@@ -17,3 +17,6 @@ class ArrayList:
     if index < 0 or index >= len(self.data):
       raise IndexError("Index out of range")
     return self.data.pop(index)
+  
+  def deleteAll(self, element: str) -> None:
+    self.data = [item for item in self.data if item != element]
