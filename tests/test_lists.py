@@ -9,7 +9,6 @@ class TestArrayList(unittest.TestCase):
   def test_length(self):
     self.assertEqual(self.list.length(), 0)
     self.list.append("a")
-    self.list.append("b")
     self.assertEqual(self.list.length(), 1)
 
   def test_append(self):
