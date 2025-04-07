@@ -51,3 +51,6 @@ class ArrayList:
   
   def extend(self, elements) -> None:
     self.data.extend(elements.data)
+  
+  def __str__(self):
+    return str(self.data)
