@@ -2,7 +2,8 @@
 
 Developed by Rodina Olekasdr (IM-33 group)
 
-**Variant in group memeber list: 19**
+**Variant in group list: 19**
+
 **Lab variant: 19 % 4 = 3**
 
 Implementation of List and Doubly Linked List with a bunch of useful methods.
