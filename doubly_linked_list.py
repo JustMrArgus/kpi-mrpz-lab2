@@ -126,3 +126,19 @@ class DoublyLinkedList:
       new_list.append(current.data)
       current = current.next
     return new_list
+  
+  def reverse(self) -> None:
+    if self.head is None or self.head == self.tail:
+      return
+    
+    current = self.head
+    self.tail = self.head
+    
+    while current:
+      temp = current.next
+      current.next = current.prev
+      current.prev = temp
+      
+      if not current.prev:
+        self.head = current
+      current = current.prev
