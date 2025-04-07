@@ -20,3 +20,8 @@ class ArrayList:
   
   def deleteAll(self, element: str) -> None:
     self.data = [item for item in self.data if item != element]
+  
+  def get(self, index: int) -> str:
+    if index < 0 or index >= len(self.data):
+      raise IndexError("Index out of range")
+    return self.data[index]
