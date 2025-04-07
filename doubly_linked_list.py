@@ -181,3 +181,11 @@ class DoublyLinkedList:
     else:
       for i in range(elements.length()):
         self.append(elements.get(i))
+  
+  def __str__(self):
+    result = []
+    current = self.head
+    while current:
+        result.append(current.data)
+        current = current.next
+    return str(result)
