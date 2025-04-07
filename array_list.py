@@ -12,3 +12,8 @@ class ArrayList:
     if index < 0 or index > len(self.data):
       raise IndexError("Index out of range")
     self.data.insert(index, element)
+  
+  def delete(self, index: int) -> str:
+    if index < 0 or index >= len(self.data):
+      raise IndexError("Index out of range")
+    return self.data.pop(index)
