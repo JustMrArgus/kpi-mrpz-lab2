@@ -25,3 +25,8 @@ class ArrayList:
     if index < 0 or index >= len(self.data):
       raise IndexError("Index out of range")
     return self.data[index]
+  
+  def clone(self):
+    new_list = ArrayList()
+    new_list.data = self.data.copy()
+    return new_list
