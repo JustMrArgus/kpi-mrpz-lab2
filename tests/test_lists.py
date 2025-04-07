@@ -9,9 +9,8 @@ class TestArrayList(unittest.TestCase):
   def test_length(self):
     self.assertEqual(self.list.length(), 0)
     self.list.append("a")
+    self.list.append("b")
     self.assertEqual(self.list.length(), 1)
-
-    # Just comment to show that CI/CD works fine
 
   def test_append(self):
     self.list.append("x")
