@@ -166,3 +166,8 @@ class DoublyLinkedList:
       index -= 1
     
     return -1
+  
+  def clear(self) -> None:
+    self.head = None
+    self.tail = None
+    self._size = 0
