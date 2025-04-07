@@ -22,7 +22,7 @@ class DoublyLinkedList:
       new_node.prev = self.tail
       self.tail.next = new_node
       self.tail = new_node
-      self._size += 1
+    self._size += 1
     
   def insert(self, element: str, index: int) -> None:
     if index < 0 or index > self._size:
@@ -31,57 +31,80 @@ class DoublyLinkedList:
     new_node = Node(element)
         
     if index == 0:
-        if self.head is None:
-            self.head = new_node
-            self.tail = new_node
-        else:
-            new_node.next = self.head
-            self.head.prev = new_node
-            self.head = new_node
-    elif index == self._size:
-        new_node.prev = self.tail
-        self.tail.next = new_node
+      if self.head is None:
+        self.head = new_node
         self.tail = new_node
+      else:
+        new_node.next = self.head
+        self.head.prev = new_node
+        self.head = new_node
+    elif index == self._size:
+      new_node.prev = self.tail
+      self.tail.next = new_node
+      self.tail = new_node
     else:
-        current = self.head
-        for _ in range(index):
-            current = current.next
+      current = self.head
+      for _ in range(index):
+        current = current.next
         
-        new_node.prev = current.prev
-        new_node.next = current
-        current.prev.next = new_node
-        current.prev = new_node
+      new_node.prev = current.prev
+      new_node.next = current
+      current.prev.next = new_node
+      current.prev = new_node
     
     self._size += 1
 
   def delete(self, index: int) -> str:
     if self.head is None or index < 0 or index >= self._size:
-        raise IndexError("Index out of range")
+      raise IndexError("Index out of range")
     
     if index == 0:
-        data = self.head.data
-        if self.head == self.tail:
-            self.head = None
-            self.tail = None
-        else:
-            self.head = self.head.next
-            self.head.prev = None
-        self._size -= 1
-        return data
+      data = self.head.data
+      if self.head == self.tail:
+        self.head = None
+        self.tail = None
+      else:
+        self.head = self.head.next
+        self.head.prev = None
+      self._size -= 1
+      return data
     
     if index == self._size - 1:
-        data = self.tail.data
-        self.tail = self.tail.prev
-        self.tail.next = None
-        self._size -= 1
-        return data
+      data = self.tail.data
+      self.tail = self.tail.prev
+      self.tail.next = None
+      self._size -= 1
+      return data
     
     current = self.head
     for _ in range(index):
-        current = current.next
+      current = current.next
     
     data = current.data
     current.prev.next = current.next
     current.next.prev = current.prev
     self._size -= 1
     return data
+  
+  def deleteAll(self, element: str) -> None:
+    if self.head is None:
+      return
+    
+    current = self.head
+    while current:
+      next_node = current.next
+      if current.data == element:
+        if current == self.head:
+          self.head = current.next
+          if self.head:
+              self.head.prev = None
+          else:
+              self.tail = None
+        elif current == self.tail:
+          self.tail = current.prev
+          self.tail.next = None
+        else:
+            current.prev.next = current.next
+            current.next.prev = current.prev
+        self._size -= 1
+      current = next_node
