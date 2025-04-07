@@ -118,3 +118,11 @@ class DoublyLinkedList:
       current = current.next
   
     return current.data
+  
+  def clone(self):
+    new_list = DoublyLinkedList()
+    current = self.head
+    while current:
+      new_list.append(current.data)
+      current = current.next
+    return new_list
