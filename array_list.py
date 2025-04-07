@@ -45,3 +45,6 @@ class ArrayList:
       if self.data[i] == element:
         return i
     return -1
+  
+  def clear(self) -> None:
+    self.data = []
