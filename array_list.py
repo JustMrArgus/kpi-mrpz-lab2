@@ -30,3 +30,6 @@ class ArrayList:
     new_list = ArrayList()
     new_list.data = self.data.copy()
     return new_list
+  
+  def reverse(self) -> None:
+    self.data.reverse()
