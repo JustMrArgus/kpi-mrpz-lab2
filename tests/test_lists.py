@@ -11,6 +11,8 @@ class TestArrayList(unittest.TestCase):
     self.list.append("a")
     self.assertEqual(self.list.length(), 1)
 
+    # Just comment to show that CI/CD works fine
+
   def test_append(self):
     self.list.append("x")
     self.assertEqual(str(self.list), "['x']")
