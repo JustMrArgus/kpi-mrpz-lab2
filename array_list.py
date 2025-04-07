@@ -33,3 +33,9 @@ class ArrayList:
   
   def reverse(self) -> None:
     self.data.reverse()
+  
+  def findFirst(self, element: str) -> int:
+    try:
+      return self.data.index(element)
+    except ValueError:
+      return -1
