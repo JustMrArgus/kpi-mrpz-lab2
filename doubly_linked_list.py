@@ -142,3 +142,15 @@ class DoublyLinkedList:
       if not current.prev:
         self.head = current
       current = current.prev
+  
+  def findFirst(self, element: str) -> int:
+    current = self.head
+    index = 0
+    
+    while current:
+      if current.data == element:
+        return index
+      current = current.next
+      index += 1
+    
+    return -1
